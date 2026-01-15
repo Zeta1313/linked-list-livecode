@@ -1,19 +1,8 @@
-public class Practice {
-    public static void main(String[] args) {
-        Node head = new Node('g', null);
-        Node ryan = new Node('s', new Node('v', new Node('x', null)));
-        head.next = ryan;
+public class MyLL {
+    private Node head;
 
-        printlist(head);
-        System.out.println(contains(head, 's'));
-        System.out.println(contains(head, 'a'));
-        remove(head, 'x');
-        remove(head, 'a');
-        printlist(head);
-    }
-
-    public static void printlist(Node start) {
-        Node current = start; 
+    public void printlist() {
+        Node current = head; 
         while (current.next!=null) {
             System.out.println(current.value);
             current = current.next;
@@ -22,8 +11,8 @@ public class Practice {
 
     }
 
-    public static boolean contains(Node start, char ToFind) {
-        Node current = start;
+    public boolean contains(char ToFind) {
+        Node current = head;
 
         while (current.next!=null) {
             if (current.value==ToFind) {
@@ -39,8 +28,8 @@ public class Practice {
         }
     }
 
-    public static char remove(Node start, char target) {
-        Node current = start;
+    public char remove(char target) {
+        Node current = head;
 
         while (current.next!=null) {
             if (current.next.value == target) {
