@@ -1,54 +1,12 @@
 public class Practice {
     public static void main(String[] args) {
-        Node head = new Node('g', null);
-        Node ryan = new Node('s', new Node('v', new Node('x', null)));
-        head.next = ryan;
+        MyLL<Character> list = new MyLL<Character>();
+        list.addToBack('z');
+        list.addToBack('a');
+        list.addToBack('b');
+        list.addToBack('g');
+        list.remove('a');
+        list.printlist();
 
-        printlist(head);
-        System.out.println(contains(head, 's'));
-        System.out.println(contains(head, 'a'));
-        remove(head, 'x');
-        remove(head, 'a');
-        printlist(head);
-    }
-
-    public static void printlist(Node start) {
-        Node current = start; 
-        while (current.next!=null) {
-            System.out.println(current.value);
-            current = current.next;
-        }
-        System.out.println(current.value);
-
-    }
-
-    public static boolean contains(Node start, char ToFind) {
-        Node current = start;
-
-        while (current.next!=null) {
-            if (current.value==ToFind) {
-                return true;
-            }
-            current = current.next;
-        }
-        if (current.value==ToFind) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    public static char remove(Node start, char target) {
-        Node current = start;
-
-        while (current.next!=null) {
-            if (current.next.value == target) {
-                current.next = current.next.next;
-                return target;
-            }
-        current = current.next;
-        }
-        return'0';
     }
 }
