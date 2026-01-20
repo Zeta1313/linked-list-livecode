@@ -59,7 +59,7 @@ public class MyLL<T> {
         if (head.value == target) {
             head = head.next;
             head.last = null;
-            return null;
+            return target;
         }
         Node<T> current = head;
 
